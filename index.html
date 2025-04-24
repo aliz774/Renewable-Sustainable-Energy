@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Renewable World | Renewable Energy Solutions</title>
+  <link rel="icon" type="jpeg" href="logo.jpg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #2c2c2c;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header img {
+      height: 50px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: #444;
+      border-radius: 5px;
+      padding: 0.5rem;
+    }
+    nav ul li.active ul {
+      display: block;
+    }
+    nav ul li ul li {
+      margin: 0.5rem 0;
+    }
+    main {
+      padding: 2rem;
+      background-color: #ffffff;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .renewable-source {
+      background: #f9f9f9;
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .renewable-source img {
+      float: right;
+      margin-left: 1rem;
+      height: 120px;
+    }
+    .renewable-source h3 {
+      color: #007e5f;
+    }
+    footer {
+      background-color: #2c2c2c;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .footer-links ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0;
+      list-style: none;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+    }
+    .footer-contact-form {
+      margin-top: 1rem;
+    }
+    .footer-contact-form input[type="text"],
+    .footer-contact-form input[type="email"] {
+      padding: 0.5rem;
+      margin: 0.5rem;
+      width: 200px;
+      border: none;
+      border-radius: 4px;
+    }
+    .footer-contact-form input[type="submit"] {
+      padding: 0.5rem 1rem;
+      background: #007e5f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="RW Logo" style="height: 50px;">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="pricing.html">Plans</a></li>         <!-- Subscription -->
+        <li><a href="#" class="dropdown-toggle">Features</a>
+          <ul>
+            <li><a href="blogs.html" target="_blank">Blogs</a></li>
+            <li><a href="q&a.html" target="_blank">Q&A</a></li>
+            <li><a href="webinars.html" target="_blank">Webinars</a></li>
+            <li><a href="news.html" target="_blank">News</a></li>
+            <li><a href="case-studies.html" target="_blank">Case Studies</a></li>
+            <li><a href="interactive-tools.html" target="_blank">Interactive Tools</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="dropdown-toggle">Functions</a>
+          <ul>
+            <li><a href="job-portal.html" target="_blank">Job Portal</a></li>
+            <li><a href="innovative-ideas.html" target="_blank">Innovative Ideas</a></li>
+            <li><a href="tech-basics.html" target="_blank">Tech Basics</a></li>
+            <li><a href="resources-library.html" target="_blank">Resources Library</a></li>
+            <li><a href="project-showcase.html" target="_blank">Project Showcase</a></li>
+          </ul>
+        </li>
+        <li><a href="Sign-Up.html" target="_blank">Sign Up</a></li>
+        <li><a href="login.html" target="_blank">Login</a></li>
+        <li><a href="#" class="dropdown-toggle">Contact</a>
+          <ul>
+            <li><a href="about-us.html" target="_blank">About Us</a></li>
+            <li><a href="sponsors.html">Sponsorships</a></li> <!-- Sponsors -->
+            <li><a href="consulting.html">Consulting</a></li> <!-- Consulting -->
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="renewable-energy-sources">
+      <h2>Common Sources of Renewable Energy</h2>
+
+      <div class="renewable-source">
+        <img src="icon-transparent2.png" alt="Solar Energy">
+        <h3>Solar Energy</h3>
+        <p>Solar panels use photovoltaic cells to convert sunlight into electricity. They are installed on rooftops or solar farms, ideal in regions with high sun exposure.</p>
+      </div>
+
+      <div class="renewable-source">
+        <img src="wind.jpg" alt="Wind Energy">
+        <h3>Wind Energy</h3>
+        <p>Wind turbines capture kinetic energy from the wind. Onshore and offshore turbines have evolved with taller designs and wider blades to produce more electricity.</p>
+      </div>
+
+      <div class="renewable-source">
+        <img src="geothermal.png" alt="Geothermal Energy">
+        <h3>Geothermal Energy</h3>
+        <p>Geothermal systems tap into Earth’s heat via reservoirs and power plants. Though complex, they are powerful long-term solutions for clean energy.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact-form">
+      <form id="contactForm" method="post">
+        <input type="text" id="phone" name="phone" placeholder="Phone" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <p style="margin-top: 1rem;">&copy; 2024 Renewable World. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Toggle dropdown visibility when clicked
+    document.querySelectorAll('.dropdown-toggle').forEach(item => {
+      item.addEventListener('click', function(event) {
+        // Prevent the default anchor behavior
+        event.preventDefault();
+
+        // Toggle the active class on the parent <li> to show/hide the dropdown
+        const parentLi = item.parentElement;
+        parentLi.classList.toggle('active');
+
+        // Close other dropdowns when one is opened
+        document.querySelectorAll('li').forEach(li => {
+          if (li !== parentLi) {
+            li.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // Prevent closing dropdown when clicking inside
+    document.querySelector('nav').addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+  </script>
+
+</body>
+</html>

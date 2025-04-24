@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Innovative Ideas</title>
+  <link rel="icon" type="jpeg" href="logo.jpg">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    a{
+        text-decoration: none;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a, nav ul li button {
+      color: #fff;
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .idea-card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .idea-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .idea-card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    .idea-card h3 {
+      color: #333;
+    }
+
+    .idea-card p {
+      text-align: justify;
+      color: #555;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      z-index: 1000;
+      display: none;
+    }
+
+    .modal.show {
+      display: block;
+    }
+
+    .modal textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+    }
+
+    .modal button {
+      margin-top: 10px;
+      background: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="logo.jpg" alt="Logo" class="logo"/></a>
+    <nav>
+      <ul>
+        <li><a href="#idea1">Idea 1</a></li>
+        <li><a href="#idea2">Idea 2</a></li>
+        <li><a href="#idea3">Idea 3</a></li>
+        <li><button id="submit-btn">Submit Idea</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="idea-card" id="idea1">
+      <img src="perovskite-cell.jpg" alt="Perovskite Solar Cells"/>
+      <h3>Perovskite Solar Cells</h3>
+      <p>High-efficiency solar technology that uses perovskite minerals. These are lightweight, flexible, and can be semi-transparent for window integration.</p>
+    </div>
+
+    <div class="idea-card" id="idea2">
+      <img src="bioplastic.jpg" alt="Biodegradable Bioplastics"/>
+      <h3>Biodegradable Bioplastics</h3>
+      <p>Created from natural materials like cornstarch, these plastics decompose quickly and reduce long-term environmental waste.</p>
+    </div>
+
+    <div class="idea-card" id="idea3">
+      <img src="tiles.webp" alt="Pollution-Absorbing Tiles"/>
+      <h3>Pollution-Absorbing Tiles</h3>
+      <p>Tiles made of photocatalytic materials that absorb pollutants from the air and convert them into harmless substances, improving urban air quality.</p>
+    </div>
+
+    <div class="idea-card" id="idea4">
+      <img src="verticalfarming.jpg" alt="Vertical Farming"/>
+      <h3>Vertical Farming</h3>
+      <p>Stacked farming systems for urban areas using hydroponics and LED lighting, minimizing land use and conserving water while producing fresh food locally.</p>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="submit-modal" class="modal">
+    <h3>Submit Your Innovative Idea</h3>
+    <form id="idea-form">
+      <input type="text" placeholder="Title" required/><br/>
+      <textarea placeholder="Describe your idea..." required></textarea><br/>
+      <button type="submit">Submit</button>
+    </form>
+    <button onclick="document.getElementById('submit-modal').classList.remove('show')">Close</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Renewable World | Share your ideas for a greener future</p>
+  </footer>
+
+  <script>
+    document.getElementById('submit-btn').addEventListener('click', () => {
+      document.getElementById('submit-modal').classList.add('show');
+    });
+
+    document.getElementById('idea-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for submitting your idea!');
+      document.getElementById('submit-modal').classList.remove('show');
+    });
+  </script>
+</body>
+</html>

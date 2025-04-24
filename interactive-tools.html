@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Renewable Tools</title>
+  <link rel="icon" type="jpeg" href="logo.jpg">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #004d00;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #energyResult, #solarPanelResult, #windTurbineResult, 
+    #batteryStorageResult, #emissionReductionResult, #submissionResult {
+      margin-top: 15px;
+      padding: 10px;
+      background: #eafbea;
+      border-left: 4px solid #28a745;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <img src="logo.jpg" alt="Logo" />
+      <a href="index.html">Home</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Renewable Energy Interactive Tools</h1>
+
+    <h2>Energy Efficiency Calculator</h2>
+    <form id="energyCalculator">
+      <label for="systemPower">System Power (kW):</label>
+      <input type="number" id="systemPower" required>
+
+      <label for="operatingHours">Operating Hours per Day:</label>
+      <input type="number" id="operatingHours" required>
+
+      <label for="energyCost">Energy Cost (₹/kWh):</label>
+      <input type="number" id="energyCost" required>
+
+      <button type="button" onclick="calculateEnergyEfficiency()">Calculate</button>
+    </form>
+    <div id="energyResult"></div>
+
+    <h2>Solar Panel Sizing Tool</h2>
+    <form id="solarPanelSizing">
+      <label for="location">Location:</label>
+      <input type="text" id="location" required>
+
+      <label for="energyDemand">Energy Demand (kWh/day):</label>
+      <input type="number" id="energyDemand" required>
+
+      <label for="panelEfficiency">Panel Efficiency (%):</label>
+      <input type="number" id="panelEfficiency" required>
+
+      <button type="button" onclick="calculateSolarPanelSize()">Calculate</button>
+    </form>
+    <div id="solarPanelResult"></div>
+
+    <h2>Wind Turbine Performance Simulator</h2>
+    <form id="windTurbineSimulator">
+      <label for="windSpeed">Wind Speed (m/s):</label>
+      <input type="number" id="windSpeed" required>
+
+      <label for="turbineDiameter">Turbine Diameter (m):</label>
+      <input type="number" id="turbineDiameter" required>
+
+      <label for="efficiency">Turbine Efficiency (%):</label>
+      <input type="number" id="efficiency" required>
+
+      <button type="button" onclick="simulateWindTurbinePerformance()">Simulate</button>
+    </form>
+    <div id="windTurbineResult"></div>
+
+    <h2>Battery Storage Calculator</h2>
+    <form id="batteryStorageCalculator">
+      <label for="energyDemand">Energy Demand (kWh/day):</label>
+      <input type="number" id="energyDemand" required>
+
+      <label for="availableSpace">Available Space (m²):</label>
+      <input type="number" id="availableSpace" required>
+
+      <label for="batteryTechnology">Battery Technology:</label>
+      <select id="batteryTechnology">
+        <option value="leadAcid">Lead Acid</option>
+        <option value="lithiumIon">Lithium-ion</option>
+        <option value="flowBattery">Flow Battery</option>
+      </select>
+
+      <button type="button" onclick="calculateBatteryStorage()">Calculate</button>
+    </form>
+    <div id="batteryStorageResult"></div>
+
+    <h2>Carbon Emission Reduction Estimator</h2>
+    <form id="carbonEmissionEstimator">
+      <label for="fossilFuelEmission">Fossil Fuel Emission (tons/year):</label>
+      <input type="number" id="fossilFuelEmission" required>
+
+      <label for="renewableEnergyReduction">Reduction from Renewable Energy (tons/year):</label>
+      <input type="number" id="renewableEnergyReduction" required>
+
+      <button type="button" onclick="calculateEmissionReduction()">Calculate</button>
+    </form>
+    <div id="emissionReductionResult"></div>
+
+    <h2>Project Collaboration Platform</h2>
+    <form id="projectCollaborationForm">
+      <label for="projectTitle">Project Title:</label>
+      <input type="text" id="projectTitle" required>
+
+      <label for="projectDescription">Project Description:</label>
+      <textarea id="projectDescription" rows="4" required></textarea>
+
+      <label for="collaborators">Collaborators (comma-separated):</label>
+      <input type="text" id="collaborators" required>
+
+      <button type="button" onclick="submitProject()">Submit Project</button>
+    </form>
+    <div id="submissionResult"></div>
+  </div>
+
+  <script>
+    function calculateEnergyEfficiency() {
+      const power = parseFloat(document.getElementById('systemPower').value);
+      const hours = parseFloat(document.getElementById('operatingHours').value);
+      const cost = parseFloat(document.getElementById('energyCost').value);
+      const consumption = power * hours * 30;
+      const monthlyCost = consumption * cost;
+      document.getElementById('energyResult').innerHTML = `
+        <strong>Monthly Energy:</strong> ${consumption.toFixed(2)} kWh<br>
+        <strong>Cost:</strong> ₹${monthlyCost.toFixed(2)}`;
+    }
+
+    function calculateSolarPanelSize() {
+      const location = document.getElementById('location').value;
+      const demand = parseFloat(document.getElementById('energyDemand').value);
+      const efficiency = parseFloat(document.getElementById('panelEfficiency').value);
+      const panelSize = (demand / (efficiency / 100 * 4)).toFixed(2);
+      document.getElementById('solarPanelResult').innerHTML = `
+        <strong>Location:</strong> ${location}<br>
+        <strong>Optimal Panel Size:</strong> ${panelSize} kW`;
+    }
+
+    function simulateWindTurbinePerformance() {
+      const speed = parseFloat(document.getElementById('windSpeed').value);
+      const diameter = parseFloat(document.getElementById('turbineDiameter').value);
+      const eff = parseFloat(document.getElementById('efficiency').value);
+      const powerOutput = (0.5 * 1.225 * Math.PI * Math.pow(diameter / 2, 2) * Math.pow(speed, 3) * (eff / 100)) / 1000;
+      document.getElementById('windTurbineResult').innerHTML = `
+        <strong>Power Output:</strong> ${powerOutput.toFixed(2)} kW`;
+    }
+
+    function calculateBatteryStorage() {
+      const demand = parseFloat(document.getElementById('energyDemand').value);
+      const space = parseFloat(document.getElementById('availableSpace').value);
+      const tech = document.getElementById('batteryTechnology').value;
+      const requiredCapacity = (demand * 1.5).toFixed(2);
+      document.getElementById('batteryStorageResult').innerHTML = `
+        <strong>Battery Tech:</strong> ${tech}<br>
+        <strong>Capacity Needed:</strong> ${requiredCapacity} kWh`;
+    }
+
+    function calculateEmissionReduction() {
+      const emission = parseFloat(document.getElementById('fossilFuelEmission').value);
+      const reduction = parseFloat(document.getElementById('renewableEnergyReduction').value);
+      const percentage = ((reduction / emission) * 100).toFixed(2);
+      document.getElementById('emissionReductionResult').innerHTML = `
+        <strong>Emission Reduction:</strong> ${percentage}%`;
+    }
+
+    function submitProject() {
+      const title = document.getElementById('projectTitle').value;
+      const desc = document.getElementById('projectDescription').value;
+      const team = document.getElementById('collaborators').value;
+      document.getElementById('submissionResult').innerHTML = `
+        <strong>Title:</strong> ${title}<br>
+        <strong>Description:</strong> ${desc}<br>
+        <strong>Collaborators:</strong> ${team}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources Library</title>
+    <link rel="icon" type="jpeg" href="logo.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .resource-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid #007BFF;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .resource-card h2 {
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .resource-card a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resource-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .logo span {
+                font-size: 18px;
+            }
+
+            nav a {
+                font-size: 14px;
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+            <span>Renewable World</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="tech-basics.html">Tech Basics</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="resources-library.html">Resources</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Resources Library</h1>
+        <p>This library provides handpicked resources for civil and electrical engineers working in the renewable energy domain. We aim to bridge the gap between knowledge and practical application with real-time insights and learning materials.</p>
+
+        <div class="resource-card">
+            <h2>Library 1: Renewable Energy Basics</h2>
+            <p>Get a strong foundation in solar, wind, hydro, and geothermal energy systems.</p>
+            <a href="https://www.americangeosciences.org/critical-issues/renewable-energy-basics#google_vignette" target="_blank">Explore Library</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Library 2: Advanced Renewable Energy Systems</h2>
+            <p>Deep dive into smart grids, hydrogen storage, microgrids, and hybrid systems.</p>
+            <a href="https://www.researchgate.net/publication/293224697_Advanced_renewable_energy_systems" target="_blank">Explore Library</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Library 3: Renewable Energy Policy and Economics</h2>
+            <p>Understand energy laws, incentives, and investment opportunities in green energy.</p>
+            <a href="https://cer.iitk.ac.in/re_reg/?id=3" target="_blank">Explore Library</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Library 4: Real-Time Monitoring & IoT in Energy</h2>
+            <p>Learn about IoT-enabled energy meters, SCADA, and real-time performance tracking.</p>
+            <a href="https://ieeexplore.ieee.org/document/8746461" target="_blank">Explore Library</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Library 5: Simulation Tools for Energy Systems</h2>
+            <p>Access tutorials on MATLAB/Simulink, HOMER Pro, and RETScreen for project design and simulation.</p>
+            <a href="https://www.nrel.gov/international/tools.html" target="_blank">Explore Library</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Library 6: Global Renewable Projects</h2>
+            <p>Case studies and reports on large-scale renewable energy projects from the IRENA database.</p>
+            <a href="https://www.irena.org/publications" target="_blank">Explore Library</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Contact us: <a href="mailto:info@renewableworld.com">info@renewableworld.com</a></p>
+        <p>Follow us on <a href="https://twitter.com/REBasics" target="_blank">Twitter</a> | <a href="https://www.linkedin.com/company/renewable-energy-basics" target="_blank">LinkedIn</a></p>
+        <p>&copy; 2024 Renewable World</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Webinars - Renewable World</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+    }
+    header {
+      background-color:#444;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo img {
+      height: 50px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav li {
+      position: relative;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      display: block;
+    }
+    nav li:hover > ul {
+      display: block;
+    }
+    nav ul ul {
+      display: none;
+      position: absolute;
+      background-color: #34495e;
+      top: 100%;
+      left: 0;
+      min-width: 150px;
+    }
+    nav ul ul li {
+      width: 100%;
+    }
+    nav ul ul a {
+      padding: 10px;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .webinars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .webinar {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: calc(33.33% - 20px);
+    }
+    .webinar h2 {
+      font-size: 1.2rem;
+    }
+    .register-btn {
+      margin-top: 10px;
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .register-btn:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .webinars {
+        flex-direction: column;
+      }
+      .webinar {
+        width: 100%;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="RW Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+         
+        <li><a href="contact-us.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 style="text-align:center; margin-bottom: 30px;">Upcoming Webinars</h1>
+    <section class="webinars">
+      <div class="webinar">
+        <h2>Solar Innovations 2025</h2>
+        <p>Date: April 25, 2025</p>
+        <p>Presenter: Dr. Aditi Mehra</p>
+        <p>Explore cutting-edge solar tech and global case studies.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+      <div class="webinar">
+        <h2>Green Hydrogen for India</h2>
+        <p>Date: May 2, 2025</p>
+        <p>Presenter: Rajiv Nair</p>
+        <p>Insights into India's green hydrogen production and strategy.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+      <div class="webinar">
+        <h2>Wind Energy Optimization</h2>
+        <p>Date: May 12, 2025</p>
+        <p>Presenter: Elena Kapoor</p>
+        <p>Design and data analytics in wind turbine performance.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+      <div class="webinar">
+        <h2>Carbon Capture & Storage</h2>
+        <p>Date: May 22, 2025</p>
+        <p>Presenter: Dr. Neeraj K.</p>
+        <p>Role of CCS in reducing emissions from fossil fuels.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+      <div class="webinar">
+        <h2>Smart Grids & IoT</h2>
+        <p>Date: June 3, 2025</p>
+        <p>Presenter: Meenal Shah</p>
+        <p>How IoT and AI are reshaping energy distribution.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+      <div class="webinar">
+        <h2>Battery Storage Trends</h2>
+        <p>Date: June 15, 2025</p>
+        <p>Presenter: Arjun Patel</p>
+        <p>Advancements in lithium-ion and solid-state batteries.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding:20px; background:#444; color:white;">
+    &copy; 2025 Renewable World. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

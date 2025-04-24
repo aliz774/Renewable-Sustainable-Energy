@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renewable Energy Q&A</title>
+  <link rel="icon" type="jpeg" href="logo.jpg">
+  <style>
+    /* Reset default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f6f9;
+    }
+
+    /* Header styling */
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .home-button {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: #fff;
+      color: #333;
+    }
+
+    #searchInput {
+      width: 250px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border 0.3s ease;
+    }
+
+    #searchInput:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    /* Main section styling */
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .qa-container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question h2 {
+      font-size: 1.4rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 12px;
+      padding: 5px 10px;
+      margin-right: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .tag:hover {
+      background-color: #45a049;
+    }
+
+    /* Chat section */
+    .chat-container {
+      margin-top: 40px;
+      border-top: 2px solid #ddd;
+      padding-top: 20px;
+    }
+
+    .chat-message {
+      margin-bottom: 10px;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .chat-message .username {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .chat-input {
+      width: 100%;
+      height: 100px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .chat-send-btn {
+      background-color: #4CAF50;
+      color: #fff;
+      margin-bottom: 50px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    .chat-send-btn:hover {
+      background-color: #45a049;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #searchInput {
+        width: 80%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="RW Logo"
+        style="height: 50px; position: absolute; left: 20px; top: 50%; transform: translateY(-50%);">
+    </div>
+    <!-- <h1>Renewable Energy Q&A</h1> -->
+    <a href="index.html" class="home-button">Home</a>
+    <input type="text" id="searchInput" placeholder="Search for questions...">
+  </header>
+
+  <main>
+    <div class="qa-container">
+      <div class="question">
+        <h2>What is the impact of renewable energy on the environment?</h2>
+        <p>Renewable energy significantly reduces greenhouse gas emissions, mitigating climate change and air pollution.
+          It also decreases reliance on non-renewable resources, preserving ecosystems. While manufacturing and disposal
+          have some environmental impact, it is far lower than that of fossil fuels.</p>
+        <div class="tags">
+          <span class="tag">Environment</span>
+          <span class="tag">Renewable Energy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-container">
+      <div class="question">
+        <h2>How does solar energy work?</h2>
+        <p>Solar panels convert sunlight into electricity using photovoltaic cells. These cells generate a flow of
+          electric current when exposed to sunlight.</p>
+        <div class="tags">
+          <span class="tag">Solar Energy</span>
+          <span class="tag">Technology</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-container">
+      <div class="question">
+        <h2>What are the advantages of wind energy?</h2>
+        <p>Wind energy is clean, renewable, and abundant. It doesn't produce harmful emissions, and it can be generated
+          in areas with high wind speeds.</p>
+        <div class="tags">
+          <span class="tag">Wind Energy</span>
+          <span class="tag">Renewable Energy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-container">
+      <div class="question">
+        <h2>What are the challenges with using renewable energy?</h2>
+        <p>Some challenges include the intermittency of sources like solar and wind, initial infrastructure costs, and
+          the need for energy storage solutions to provide a continuous energy supply.</p>
+        <div class="tags">
+          <span class="tag">Challenges</span>
+          <span class="tag">Renewable Energy</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Chat section -->
+    <div class="chat-container">
+      <h2>Chat</h2>
+      <div id="chatMessages"></div>
+      <input type="text" id="chatInput" class="chat-input" placeholder="Type your message here...">
+      <button id="sendButton" class="chat-send-btn">Send</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Renewable World. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Chat functionality
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const sendButton = document.getElementById('sendButton');
+
+    sendButton.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if (message !== '') {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('chat-message');
+        messageDiv.innerHTML = `<span class="username">User:</span> ${message}`;
+        chatMessages.appendChild(messageDiv);
+        chatInput.value = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Portal</title>
+  <link rel="icon" type="jpeg" href="logo.jpg">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .home-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .home-button:hover {
+      background-color: #0056b3;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #555;
+    }
+    .job-listing {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-top: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo" />
+      <h1>Job Portal</h1>
+    </div>
+    <a href="index.html" class="home-button">Home</a>
+  </header>
+
+  <div class="container">
+    <h2>Welcome to our Job Portal</h2>
+    <form id="job-form" action="add_job.php" method="POST">
+      <label for="job-title">Job Title:</label>
+      <input type="text" id="job-title" name="job_title" required>
+    
+      <label for="company-name">Company Name:</label>
+      <input type="text" id="company-name" name="company_name" required>
+    
+      <label for="job-description">Job Description:</label>
+      <textarea id="job-description" name="job_description" rows="4" required></textarea>
+    
+      <button type="submit">Submit Job</button>
+    </form>
+    
+
+    <div id="job-listings">
+      <!-- Job listings will appear here -->
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Job Portal. All rights reserved.</p>
+  </footer>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      databaseURL: "YOUR_DATABASE_URL",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Submit job form
+    document.getElementById('job-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const jobTitle = document.getElementById('job-title').value;
+      const companyName = document.getElementById('company-name').value;
+      const jobDescription = document.getElementById('job-description').value;
+
+      database.ref('jobs').push({
+        title: jobTitle,
+        company: companyName,
+        description: jobDescription
+      });
+
+      document.getElementById('job-form').reset();
+    });
+
+    // Display job listings (Firebase)
+    database.ref('jobs').on('value', function(snapshot) {
+      document.getElementById('job-listings').innerHTML = '';
+      snapshot.forEach(function(childSnapshot) {
+        const job = childSnapshot.val();
+        const jobListing = `
+          <div class="job-listing">
+            <h3>${job.title}</h3>
+            <p><strong>Company:</strong> ${job.company}</p>
+            <p>${job.description}</p>
+          </div>
+        `;
+        document.getElementById('job-listings').innerHTML += jobListing;
+      });
+
+      // Add sample jobs if no Firebase data yet
+      if (!snapshot.exists()) {
+        const sampleJobs = [
+          {
+            title: "Solar Project Engineer",
+            company: "Renewable World",
+            description: "Design and manage solar panel installations for rural electrification. Must have knowledge of PV systems and AutoCAD."
+          },
+          {
+            title: "Sustainability Analyst",
+            company: "Green Innovations Ltd.",
+            description: "Evaluate environmental impact of renewable energy initiatives and support data-driven decisions for carbon footprint reduction."
+          },
+          {
+            title: "Wind Energy Technician",
+            company: "EcoWind Solutions",
+            description: "Responsible for the maintenance and monitoring of wind turbines. Technical diploma and fieldwork experience preferred."
+          },
+          {
+            title: "Energy Policy Research Assistant",
+            company: "Sustainable Future Foundation",
+            description: "Assist in preparing research reports and policy briefs focused on clean energy adoption and government incentives."
+          },
+          {
+            title: "Marketing Intern - Renewable Energy",
+            company: "Renewable World",
+            description: "Support awareness campaigns, manage social media, and help promote sustainable energy solutions."
+          }
+        ];
+
+        sampleJobs.forEach(job => {
+          const jobHTML = `
+            <div class="job-listing">
+              <h3>${job.title}</h3>
+              <p><strong>Company:</strong> ${job.company}</p>
+              <p>${job.description}</p>
+            </div>
+          `;
+          document.getElementById('job-listings').innerHTML += jobHTML;
+        });
+      }
+    });
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renewable & Sustainable Energy News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="jpeg" href="logo.jpg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #e8f5e9;
+      color: #333;
+    }
+
+    header {
+      background-color: #444;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .home-button {
+      background-color: #e4ece4;
+      color: rgb(90, 87, 87);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: #7c827c;
+    }
+
+    .news-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+
+    .article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .article h2 {
+      color: #1b5e20;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .article p {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .article a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .article a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #444;
+      color: white;
+      margin-top: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .article {
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .article img {
+        width: 35%;
+      }
+
+      .article div {
+        width: 65%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Renewable & Sustainable Energy News</h1>
+    <a href="index.html" class="home-button">Home</a>
+  </header>
+
+  <main>
+    <div class="news-container" id="news-container">
+      <p>Loading the latest news on renewable and sustainable energy...</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Renewable World. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const apiKey = '1837c14104674cf89c65a8b49823314a';
+    const url = `https://newsapi.org/v2/everything?q=renewable%20energy%20OR%20sustainable%20energy&language=en&sortBy=publishedAt&apiKey=${apiKey}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('news-container');
+        container.innerHTML = '';
+
+        data.articles.slice(0, 6).forEach(article => {
+          const div = document.createElement('div');
+          div.className = 'article';
+          div.innerHTML = `
+          <img src="${article.urlToImage || 'https://via.placeholder.com/300x200?text=No+Image'}" alt="News Image">
+          <div>
+            <h2>${article.title}</h2>
+            <p>${article.description || 'No description available.'}</p>
+            <a href="${article.url}" target="_blank">Read more</a>
+          </div>
+        `;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => {
+        document.getElementById('news-container').innerHTML = '<p>Unable to fetch news at the moment. Please try again later.</p>';
+        console.error('Fetch error:', error);
+      });
+  </script>
+
+</body>
+</html>

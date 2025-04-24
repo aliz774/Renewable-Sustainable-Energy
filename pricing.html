@@ -1,0 +1,175 @@
+<!-- pricing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscription Plans</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e293b;
+      padding: 10px 20px;
+    }
+
+    .navbar img {
+      height: 40px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      background-color: #10b981;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #facc15;
+    }
+
+    .plans {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .plan {
+      background: #fff;
+      color: #000;
+      border-radius: 15px;
+      width: 300px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .plan h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .plan p {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .plan ul {
+      text-align: left;
+      margin-bottom: 20px;
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    .plan ul li {
+      margin-bottom: 10px;
+    }
+
+    .plan button {
+      background: #fb923c;
+      border: none;
+      padding: 10px 20px;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .plan button:hover {
+      background: #f97316;
+    }
+
+    footer {
+      background-color: #1e293b;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <img src="logo.jpg" alt="Logo">
+    <a href="index.html">Home</a>
+  </div>
+
+  <div class="container">
+    <h2>Choose Your Plan</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Basic Free Plan</h3>
+        <p>For individuals and students exploring sustainability</p>
+        <div class="price">$00.00</div>
+        <ul>
+          <li>Access to curated case studies on renewable energy</li>
+          <li>Downloadable project reports & templates</li>
+          <li>Monthly newsletter with eco-tips and innovations</li>
+          <li>Ideal for school projects and college research</li>
+        </ul>
+        <button onclick="location.href='index.html'">Get Basic</button>
+      </div>
+      <div class="plan">
+        <h3>Business Plan</h3>
+        <p>For professionals, startups, and institutions</p>
+        <div class="price">$24.00</div>
+        <ul>
+          <li>Full access to premium case studies and datasets</li>
+          <li>Consultancy sessions for your sustainability project</li>
+          <li>Access to training modules and expert Q&A webinars</li>
+          <li>Priority support & feature requests</li>
+        </ul>
+        <button onclick="buyPro()">Get Business</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Renewable World | All rights reserved
+  </footer>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    function buyPro() {
+      var options = {
+        key: "YOUR_RAZORPAY_KEY_ID",
+        amount: 240000, // $24.00 in paise
+        currency: "INR",
+        name: "Renewable World",
+        description: "Business Plan Subscription",
+        handler: function (response) {
+          alert("Payment Successful! ID: " + response.razorpay_payment_id);
+        }
+      };
+      var rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
+</body>
+</html>
